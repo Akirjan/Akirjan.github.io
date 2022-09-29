@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Title for the page -->
-    <title>Document</title>
+    <title>Aki's Porfolio Tasks</title>
 
     <!-- Link to my style sheet -->
     <link rel="stylesheet" href="index2.css">
@@ -25,27 +25,33 @@
 <body>
     <!-- A div that contains a group of items for week 1. Can be useful for setting background colours etc.  -->
     <div class="myWeek1">
-        <h1>Data Science for Economists.</h1>
-        
-        <h3>Covid-19</h3>
-        <p>The first chart tracks Covid-19 cases by UK region.</p>
-        <div class="chart" id="Chart1"></div>
+        <h1>Data Science 2022</h1>
 
-        <h3>Productivity puzzle</h3>
-        <p>My second chart looks at productivity in the UK</p>
-        <div class="chart" id="Chart2"> </div>
+        <h3>By Akirjan Sivanantharajah</h3>
+        
+        <h3>Week 1</h3> 
+        <p> The first task was to embed two charts onto my homepage</p>
+            
+        
+        <h3>Bitcoin Price</h3>
+        <p>The daily price of Bitcoin from 2016-2021 (USD)</p>
+        <div class= "chart" id="Chart3"></div>
+
+        <h3>Inflation in the UK</h3>
+        <p>CPIH index from 1988-2021</p>
+        <div class="chart" id="Chart4"> </div>
     </div> 
 </body>
 
 
 <script>
     //Define charts:
-    var myChart1 = "chart1_covidUKRegions.json";
-    var myChart2 = "chart2_ukProductivity.json";
+    var myChart3 = "chart3_crypto.json";
+    var myChart4 = "chart4_inflation.json";
 
     // Embed charts:
-    vegaEmbed('#Chart1', myChart1);
-    vegaEmbed('#Chart2', myChart2);
+    vegaEmbed('#Chart3', myChart3);
+    vegaEmbed('#Chart4', myChart4);
 </script>
 
 </html>
