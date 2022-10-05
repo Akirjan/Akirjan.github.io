@@ -44,7 +44,11 @@
         
         <h3>Week 2</h3> 
         <p> The second task was to embed one chart using my Github repository and another chart using an API.</p>
-       
+    
+    <!--First chart on the price of Bitcoin from 2016-2021.-->      
+        <h3>Bitcoin Price</h3>
+        <p>The daily price of Bitcoin from 2016-2021 (USD)</p>
+        <div class= "chart" id="Chart5"></div>    
     </div> 
 </body>
 
@@ -53,10 +57,13 @@
     //Define charts:
     var myChart3 = "chart3_crypto.json";
     var myChart4 = "chart4_inflation.json";
-
+    var myChart4 = "chart5_imflending.json";
+    
     // Embed charts:
     vegaEmbed('#Chart3', myChart3);
     vegaEmbed('#Chart4', myChart4);
+    vegaEmbed('#Chart5', myChart5);
+    
 </script>
     
     
