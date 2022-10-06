@@ -16,12 +16,7 @@
   "width":300,
   "height":300,
   
-  .parent-div {
-  "display":flex;
-  "justify-content": cneter;
-  "align-items:" center;
-},
-  
+ 
 
 
   "data": {
