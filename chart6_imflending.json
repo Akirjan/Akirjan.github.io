@@ -9,7 +9,7 @@
       "anchor": "start",
       "color": "black"},
   
-  "data":{"url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/data_IMF_creditOutstanding%202.csv"},
+  "data":{"url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/data_IMF_creditOutstanding.csv"},
   
 
 
@@ -37,4 +37,3 @@
         "axis": {"grid": false}}
 }
 }
-
