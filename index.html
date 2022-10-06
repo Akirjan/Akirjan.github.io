@@ -46,10 +46,17 @@
         <h3>Week 2</h3> 
         <p> The second task was to embed one chart using my Github repository and another chart using an API.</p>
     
-    <!--Third chart on the IMF Lending outstanding.-->      
-        <h3>IMF Lending outstanding</h3>
+    <!--Third chart on the IMF Lending outstanding (Incorrect version). -->      
+        <h3>IMF Lending outstanding (Misleading)</h3>
         <p>Credit outstanding to all members, SRDS (billions), Source: IMF</p>
-        <div class= "chart" id="Chart5"></div>    
+        <div class= "chart" id="Chart5"></div>   
+        
+     <!--Fourth chart on the IMF Lending outstanding (Updated version). -->      
+        <h3>IMF Lending outstanding (Corrected)</h3>
+        <p>Credit outstanding to all members, SRDS (billions), Source: IMF</p>
+        <div class= "chart" id="Chart6"></div>        
+
+        
     </div> 
 </body>
 
@@ -59,11 +66,14 @@
     var myChart3 = "chart3_crypto.json";
     var myChart4 = "chart4_inflation.json";
     var myChart5 = "chart5_imflending.json";
+    var myChart6 = "chart6_imflending.json";
     
     // Embed charts:
     vegaEmbed('#Chart3', myChart3);
     vegaEmbed('#Chart4', myChart4);
     vegaEmbed('#Chart5', myChart5);
+    vegaEmbed('#Chart6', myChart6);
+
     
 </script>
     
