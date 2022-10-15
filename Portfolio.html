@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title for the page -->
+    <title>Aki's Porfolio Tasks</title>
+
+    <!-- Link to my style sheet -->
+    <link rel="stylesheet" href="Portfolio.css">
+
+    <!--The next three lines allow the Vega embed-->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+</head>
+
+
+
+<body>
+    <!-- A div that contains a group of items for week 1. Can be useful for setting background colours etc.  -->
+    <div class="myWeek1">
+        <h1>Data Science 2022</h1>
+       
+    <div class="wrap">
+        <p class="rubric-launch">To visit my home page, click <a class="textLink" href="index.html"> here</a>.</p> 
+        <p class="rubric-launch">To visit my project page, click <a class="textLink" href="project.html"> here</a>.</p> 
+    </div>
+  
+        
+        <h3>Week 1</h3> 
+        <p> The first task was to embed two charts onto my homepage</p>
+            
+    <!--First chart on the price of Bitcoin from 2016-2021.-->      
+        <h3>Bitcoin Price</h3>
+        <p>The daily price of Bitcoin from 2016-2021 (USD)</p>
+        <div class= "chart" id="Chart3"></div>
+
+    <!--Second chart on the inflation in the UK from 1988-2021.-->      
+        <h3>Inflation in the UK</h3>
+        <p>CPIH index from 1988-2021</p>
+        <div class="chart" id="Chart4"> </div>
+        
+        <h3>Week 2</h3> 
+        <p> The second task was to replicate a chart from the FT whilst the second chart improves on the chart by the FT.</p>
+    
+    <!--Third chart on the IMF Lending outstanding (Incorrect version). -->      
+        <h3>IMF Lending - Outstanding </h3>
+        <p>Credit outstanding to all members - Misleading Chart</p>
+        <div class= "chart" id="Chart5"></div>   
+        
+     <!--Fourth chart on the IMF Lending outstanding (Updated version). -->      
+        <h3>IMF Lending - Percentage of World GDP </h3>
+        <p>Credit outstanding to all members - Corrected Chart</p>
+        <div class= "chart" id="Chart6"></div>      
+  
+     <!--Analysis of week 2 charts. -->      
+        <p> IMF lent the most, relative to World GDP, in 1984 which implies that this was the "riskiest" year. </p>
+        
+
+        
+    </div> 
+</body>
+
+
+<script>
+    //Define charts:
+    var myChart3 = "chart3_crypto.json";
+    var myChart4 = "chart4_inflation.json";
+    var myChart5 = "chart5_imflending.json";
+    var myChart6 = "chart6_imflending.json";
+    
+    // Embed charts:
+    vegaEmbed('#Chart3', myChart3);
+    vegaEmbed('#Chart4', myChart4);
+    vegaEmbed('#Chart5', myChart5);
+    vegaEmbed('#Chart6', myChart6);
+
+    
+</script>
+    
+    
+ 
+</html>

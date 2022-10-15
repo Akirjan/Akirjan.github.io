@@ -1,42 +1,69 @@
-/* Richard Davies, Data Science for Economists */
+/* Design for my home page*/
 
-/* This is my first proper css file */
+/* FONTS: */
 
-
-/* Import a font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-
-
-/* Set the background color for my page: */
-body{
-    background-color: rgb(233, 233, 233);
- 
-}
-
-
-/* Choose the appearance of the tags, h1, h3 and p: */
-h1, h3, p{
-    color:rgb(17, 17, 17);
-    font-family: 'Roboto', sans-serif;
+h1{
+    font-family: 'Noto Sans Mono', sans-serif;
     text-align: center;
+    color:rgb(255, 255, 255);
+    background-color: #0049B7;
 }
+
+p{
+    font-family: 'Noto Sans Mono', sans-serif;
+    text-align: center;
+    font-size: larger;
+    color:rgb(255, 255, 255);
+    background-color: #0049B7;
+}
+
+
+/* AREAS OF THE PAGE */
+
+body{
+    background-color: #0049B7;
+}
+
+
+
+
+
+
+/* BUTTONS */
+
+.link{
+    background-color: rgba(132, 176, 230, 0.5);
+
+    padding:10px;
     
-.myWeek1{
-    margin: auto;
-    max-width: 600px;
-    background-color: bisque;
-}
-
-
-/* Set the apperance of the class, chart */
-.chart{
-    background-color: orange;
-    width:330px;
-    border-width: 10px;
+    border:2px;
+    border-color:grey;
     border-style: solid;
-    border-radius: 5px;
-    border-color: red;
+    border-radius: 10px;
 
+    font-family: 'Courier New', Courier, monospace;
+    font-weight:700;
+    color:white;
+    text-decoration: none;
+}
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a{
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    margin: auto;
+}
+
+.link:hover{
+
+    background-color: #0049B7;
+
+    border:2px;
+    border-color:rgb(0, 0, 0);
+    border-style: solid;
     
 }
-    

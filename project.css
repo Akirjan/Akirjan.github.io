@@ -1,7 +1,7 @@
 /* This is the design for my project page */
 /* Background design */ 
 body{ 
-    background-color: rgb(39, 39, 124);
+    background-color: #7575dd;
     margin: auto;
     overflow: scroll;
     max-width: 450px;
@@ -14,8 +14,8 @@ body{
 
 h1{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: rgb(39, 39, 124);
-    color:rgb(255, 255, 255);
+    background-color: #7575dd;
+    color : rgb(255, 255, 255);
 }
 
 p{
@@ -23,8 +23,8 @@ p{
     font-size: larger;
     font-variant: small-caps;
     color:rgb(255, 255, 255);
-    background-color: rgb(39, 39, 124);
-  }
+    background-color: #7575dd;
+}
 
 
 
@@ -33,76 +33,46 @@ p{
 
 /* BUTTONS */
 
-a{
-    border: 5px;
-    border-color: black;
-    border-style: solid;
 
-    margin:20px
-}
+.link{
+  background-color: rgba(117, 0, 167, 0.5);
 
-
-
-
-#link1{
-    background-color: rgba(0, 47, 167, .5);
-
-    padding:20px;
-    
-    border:2px;
-    border-color:grey;
-    border-style: solid;
-    border-radius: 20px;
-
-    font-family: 'Courier New', Courier, monospace;
-    font-weight:700;
-    color:white;
-    
-    text-decoration: none;
-    
-}
-
-#link1:hover{
-
-    background-color: rgba(0, 47, 167, .8);
-
-    border:2px;
-    border-color:rgba(0, 47, 167, .8);
-    border-style: solid;
-    
-}
-
-
-
-
-
-
-
-
-/* CODE FOR PUSLING BORDERS */
-  @keyframes border-pulsate1 {
-    0%   { border-color: rgba(230, 34, 75, 1); }
-    50%  { border-color: rgba(230, 34, 75, 0); }
-    100% { border-color: rgba(230, 34, 75, 1); }
-  }
+  padding:10px;
   
-  @keyframes border-pulsate2 {
-    0%   { border-color: #22e68b}
-    10%  { border-color: rgba(230, 34, 75, 0)}
-    20%  { border-color: rgba(230, 34, 75)}
-    30%  { border-color: rgba(230, 34, 75, 0)}
-    40%  { border-color: rgba(0, 47, 167)}
-    50%  { border-color: rgba(230, 34, 75, 0)}
-    60%  { border-color: rgba(250, 250, 0)}
-    70%  { border-color: rgba(230, 34, 75, 0)}
-    80% { border-color: #22e68b}
-  }
+  border:2px;
+  border-color:grey;
+  border-style: solid;
+  border-radius: 10px;
 
-  @keyframes myAnimation {
-    0%   {border-color: #22e68b; background-color: black}      
-    50%  {border-color: black; background-color:yellow}
-    
-  }
-/* CODE FOR PUSLING BORDERS */
+  font-family: 'Courier New', Courier, monospace;
+  font-weight:700;
+  color:white;
+  text-decoration: none;
+}
+.links{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+a{
+  border: 5px;
+  border-color: black;
+  border-style: solid;
+  margin: auto;
+}
+
+.link:hover{
+
+  background-color: rgba(134, 0, 167, 0.8);
+
+  border:2px;
+  border-color:rgb(0, 0, 0);
+  border-style: solid;
+  
+}
+
+
+
+
   
 
