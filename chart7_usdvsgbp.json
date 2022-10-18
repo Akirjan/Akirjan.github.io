@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple bar chart with embedded data.",
+
+    "title": {
+        "text": "Exchange Rate",
+        "subtitle":"USD to GBP from 2000-2022, Source: OECD and Xe Currency Converter",
+        "subtitleFontStyle":"italic",
+        "subtitleFontSize":10,
+        "anchor": "start",
+        "color": "black"},
+    
+    "data": {
+      "values": [{"Year": 2000, "USD/GBP": 0.660931}, {"Year": 2001, "USD/GBP": 0.694655}, {"Year": 2002, "USD/GBP": 0.667223}, {"Year": 2003, "USD/GBP": 0.612472}, {"Year": 2004, "USD/GBP": 0.54618}, {"Year": 2005, "USD/GBP": 0.549998}, {"Year": 2006, "USD/GBP": 0.543487}, {"Year": 2007, "USD/GBP": 0.499772}, {"Year": 2008, "USD/GBP": 0.543966}, {"Year": 2009.0, "USD/GBP": 0.641919}, {"Year": 2010, "USD/GBP": 0.647179}, {"Year": 2011, "USD/GBP": 0.624141}, {"Year": 2012, "USD/GBP": 0.633047}, {"Year": 2013, "USD/GBP": 0.639661}, {"Year": 2014, "USD/GBP": 0.60773}, {"Year": 2015, "USD/GBP": 0.654545}, {"Year": 2016, "USD/GBP": 0.740634}, {"Year": 2017, "USD/GBP": 0.776977}, {"Year": 2018, "USD/GBP": 0.749532}, {"Year": 2019, "USD/GBP": 0.783445}, {"Year": 2020, "USD/GBP": 0.78}, {"Year": 2021, "USD/GBP": 0.727065}, {"Year": 2022, "USD/GBP": 0.88120324}]
+    },
+  
+  
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "Year", "type": "nominal"},
+      "y": {"field": "USD/GBP", "type": "quantitative"}
+    }
+  }
+  
