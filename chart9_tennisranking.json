@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bar chart with text labels. Set domain to make the frame cover the labels.",
+
+    "title": {
+        "text": "Men's Tennis ATP Rankings 2022",
+        "subtitle":"Singles Ranking, Source: ESPN",
+        "subtitleFontStyle":"italic",
+        "subtitleFontSize":10,
+        "anchor": "start",
+        "color": "black"},
+
+
+  "width": 400,
+  "height": 300,
+  
+  "data": {
+    "values": [
+      {"RK": 1, "NAME": "Carlos Alcaraz", "POINTS": 6730, "AGE": 19}, {"RK": 2, "NAME": "Rafael Nadal", "POINTS": 5810, "AGE": 36}, {"RK": 3, "NAME": "Casper Ruud", "POINTS": 5600, "AGE": 23}, {"RK": 4, "NAME": "Daniil Medvedev", "POINTS": 5155, "AGE": 26}, {"RK": 5, "NAME": "Stefanos Tsitsipas", "POINTS": 4930, "AGE": 24}, {"RK": 6, "NAME": "Alexander Zverev", "POINTS": 4860, "AGE": 25}, {"RK": 7, "NAME": "Novak Djokovic", "POINTS": 4320, "AGE": 35}, {"RK": 8, "NAME": "Andrey Rublev", "POINTS": 3685, "AGE": 25}, {"RK": 9, "NAME": "Taylor Fritz", "POINTS": 3195, "AGE": 24}, {"RK": 10, "NAME": "Felix Auger-Aliassime", "POINTS": 3155, "AGE": 22}
+    ]
+  },
+  "encoding": {
+    "y": {"field": "NAME", "type": "nominal", "sort":"quantitative"},
+    "x": {"field": "POINTS", "type": "quantitative", "scale": {"domain": [0, 7000]}}
+      },
+      
+  "layer": [{
+    "mark": "bar"
+  }, {
+    "mark": {
+      "type": "text",
+      "align": "left",
+      "baseline": "middle",
+      "dx": 3
+    },
+    "encoding": {
+      "text": {"field": "POINTS", "type": "quantitative"}
+    }
+  }]
+}

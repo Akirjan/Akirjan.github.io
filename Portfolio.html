@@ -59,11 +59,39 @@
    
         
         <h3>Week 3</h3> 
-        <p> The third task was to use to use Vega Editor to convert a CSV file into a dictonary format.</p>
+        <p> The third task was to use to use Vega Editor to convert a CSV file into a dictonary format, and create a second chart to improve on the visual endcoding.</p>
     
-    <!--Fifth chart on the exchange rate from USD to GBP -->      
+
+
+    <!--Fifth chart on the exchange rate of different currencies against the US dollar (bar chart) -->      
+        <div class= "chart" id="Chart8"></div>   
+        
+    
+
+
+    <!--Sixth chart on the exchange rate of different currencies against the US dollar (line chart)-->      
         <div class= "chart" id="Chart7"></div>   
         
+
+        <p> The visual encoding was modified from a bar chart to a line chart, as it is clearer and easier to read the exchange rates. </p>
+
+       
+       
+        <h3>Week 4</h3> 
+        <p> The fourth task was implement a data scraper of my own.</p>
+
+        <div class="wrap">
+            <p class="rubric-launch">To access the code behind the scraper, click <a class="textLink" href="https://colab.research.google.com/drive/1lAs6xjGollI_9hxutKa3WK2G1KBSkwY2#scrollTo=fUvtDpw0SNAJ"> here</a>.</p> 
+
+        </div>
+  
+    
+
+    <!--Seventh chart on the Tennis Ranking of Men in 2022 -->      
+        <div class= "chart" id="Chart9"></div>   
+                
+
+        <p> The ESPN website did not prevent me from scraping data and the table included clearly demonstrated the data for my chart. </p>   
     </div> 
 </body>
 
@@ -74,14 +102,19 @@
     var myChart4 = "chart4_inflation.json";
     var myChart5 = "chart5_imflending.json";
     var myChart6 = "chart6_imflending.json";
+    var myChart8 = "chart8_usdvscurrency.json";
     var myChart7 = "chart7_usdvsgbp.json";
+    var myChart9 = "chart9_tennisranking.json";
+    
     
     // Embed charts:
     vegaEmbed('#Chart3', myChart3);
     vegaEmbed('#Chart4', myChart4);
     vegaEmbed('#Chart5', myChart5);
     vegaEmbed('#Chart6', myChart6);
-    vegaEmbed('#Chart7', myChart7)
+    vegaEmbed('#Chart8', myChart8);
+    vegaEmbed('#Chart7', myChart7);
+    vegaEmbed('#Chart9', myChart9);
     
 </script>
     
