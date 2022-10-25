@@ -20,7 +20,7 @@
     ]
   },
   "encoding": {
-    "y": {"field": "NAME", "type": "nominal", "sort":"quantitative"},
+    "y": {"field": "NAME", "type": "nominal", "sort":"quantitative", "title": ""},
     "x": {"field": "POINTS", "type": "quantitative", "scale": {"domain": [0, 7000]}}
       },
       
