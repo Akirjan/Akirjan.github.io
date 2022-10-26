@@ -2,14 +2,14 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
   "title": {
-      "text": "IMF Lending outstanding as a percentage of World GDP",
-      "subtitle":"Credit outstanding to all members from 1984-2021, SRDs, Source: IMF and World Bank",
+      "text": "IMF Lending outstanding to all members as a percentage of World GDP",
+      "subtitle":"From 1984-2022 (Forecasted 2022 GDP), SRDs, Source: IMF and World Bank",
       "subtitleFontStyle":"italic",
       "subtitleFontSize":10,
       "anchor": "start",
       "color": "black"},
   
-  "data":{"url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/data_IMF_creditOutstanding%202.csv"},
+  "data":{"url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/data_IMF_creditOutstanding.csv"},
   
 
 
