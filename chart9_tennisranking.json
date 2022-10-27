@@ -25,7 +25,9 @@
       },
       
   "layer": [{
-    "mark": "bar"
+    "mark": {
+    "type": "bar",  
+    "color": "rgb(0,47,167"}
   }, {
     "mark": {
       "type": "text",

@@ -1,0 +1,23 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/data_ONS-agto.json",
+      "format": {"type": "json", "property": "years"}
+    },
+   "title": {
+        "text": "LFS: Econ. inactive: Aged 16-24: In full-time education: UK: SA",
+        "subtitle": "Annual: Source: ONS",
+        "subtitleFontStyle": "Arial",
+        "anchor": "start",
+        "color": "black"
+      },
+    "width": 300,
+    "height": 300,
+    "mark": {
+      "type": "line",
+      "color": "rgb(0,47,167"},
+    "encoding": {
+      "x": {"field": "date", "type": "temporal","axis": {"grid": false}, "title": ""},
+      "y": {"field": "value", "type": "quantitative","axis": {"grid": false}, "title": "Number of females (000's)"}
+    }
+  }
