@@ -21,6 +21,6 @@
     },
     "encoding": {
         "x": {"field": "date", "type": "temporal", "axis": {"grid": false}, "title": ""},
-        "y": {"field": "value", "type": "quantitative", "axis": {"grid": false}, "title": "Inactivity rate (%)"}
+        "y": {"field": "value", "type": "quantitative", "axis": {"grid": false}, "title": "Employment rate (%)"}
     }
   }
