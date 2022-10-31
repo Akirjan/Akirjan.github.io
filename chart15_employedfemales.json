@@ -1,14 +1,15 @@
+
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {
-      "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/data_ONS-lf2w.json",
+      "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/data_ONS-lf25.json",
       "format": {"type": "json", "property": "years"}
     },
          "title": {
-              "text": "Inactivity rate in the UK",
-              "subtitle": "Aged 50-64 from 1992-2022, Source: ONS",
+              "text": "Female employment rate in the UK",
+              "subtitle": "Aged 16-64 from 1971-2022: Source: ONS",
               "subtitleFontStyle": "italic",
-              "subtitleFontSize":10,
+              "subtitleFontSize": 10,
               "anchor": "start",
               "color": "black"
             },
@@ -20,6 +21,6 @@
     },
     "encoding": {
         "x": {"field": "date", "type": "temporal", "axis": {"grid": false}, "title": ""},
-        "y": {"field": "value", "type": "quantitative", "axis": {"grid": false}, "title": "Inactivity rate (%)"}
+        "y": {"field": "value", "type": "quantitative", "axis": {"grid": false}, "title": "Employment rate (%)"}
     }
   }

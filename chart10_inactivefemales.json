@@ -5,14 +5,15 @@
       "format": {"type": "json", "property": "years"}
     },
    "title": {
-        "text": "LFS: Econ. inactive: Aged 16-24: In full-time education: UK: SA",
-        "subtitle": "Annual: Source: ONS",
-        "subtitleFontStyle": "Arial",
+        "text": "Inactive females in full time edcuation, UK",
+        "subtitle": "Aged 16-24 from 1992-2021, Source: ONS",
+        "subtitleFontStyle": "italic",
+        "subtitleFontSize":10,
         "anchor": "start",
         "color": "black"
       },
-    "width": 300,
-    "height": 300,
+    "width": 180,
+    "height": 180,
     "mark": {
       "type": "line",
       "color": "rgb(0,47,167"},

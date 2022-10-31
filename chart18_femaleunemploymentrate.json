@@ -5,14 +5,15 @@
       "format": {"type": "json", "property": "years"}
     },
  "title": {
-                    "text": "Female unemployment rate (seasonally adjusted)",
-                    "subtitle": "All: Aged 16+: Annual: Source: ONS",
-                    "subtitleFontStyle": "Arial",
+                    "text": "Female unemployment rate in the UK",
+                    "subtitle": "Aged 16+ from 1971-2022: Source: ONS",
+                    "subtitleFontStyle": "italic",
+                    "subtitleFontSize":10,
                     "anchor": "start",
                     "color": "black"
                   },
-    "width": 300,
-    "height": 300,
+    "width": 200,
+    "height": 180,
     "mark": {
       "type": "line",
       "color": "rgb(0,47,167"   
