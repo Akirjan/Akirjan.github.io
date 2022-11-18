@@ -1,31 +1,31 @@
-﻿Item ,Size (units),Price (nearest pence) in April 2021 ,Price (nearest pence) in April 2022 ,April 2021 to April 2022 price change (percentage) 
-Pasta ,500g ,36,53,50.1
-Crisps ,150g ,71,83,16.8
-Bread ,800g ,47,54,16.4
-Beef Mince ,500g ,202,234,15.7
-Rice ,1000g ,80,92,15.0
-Biscuits ,400g ,39,45,14.3
-Fruit Juice (Orange) ,1000ml ,63,72,14.1
-Mixed Frozen Vegetables ,1000g ,78,89,13.7
-Fruit Squash ,750ml ,44,49,12.2
-Breakfast Cereal ,500g ,69,76,10.1
-Chicken Breast ,600g ,322,350,8.7
-Vegetable Oil ,1000ml ,164,178,8.5
-Baked Beans ,400g ,29,31,7.0
-Tomato Ketchup ,460g ,58,61,5.9
-Fish Fingers ,250g ,75,77,2.8
-Onions ,1000g ,65,67,2.6
-Ham ,200g ,160,164,2.1
-Tomatoes ,400g ,64,65,1.9
-Tea ,125g ,86,88,1.8
-Yoghurt ,500g ,54,55,1.5
-Bananas ,5 pack ,73,74,0.7
-Instant Coffee ,100g ,134,135,0.7
-Granulated Sugar ,1000g ,66,67,0.5
-Milk ,4 pints,126,127,0.3
-Apples ,6 pack ,96,94,-1.2
-Sausages ,454g ,87,84,-2.6
-Chips ,900g ,119,116,-2.9
-Pizza ,300g ,99,95,-4.1
-Cheese ,255g ,95,88,-7.3
-Potatoes ,2500g ,87,75,-13.8
+﻿Item,Size (units),Price (nearest pence) in April 2021 ,Price (nearest pence) in April 2022 ,April 2021 to April 2022 price change (percentage) 
+Pasta,500g ,36,53,50.1
+Crisps,150g ,71,83,16.8
+Bread,800g ,47,54,16.4
+Beef Mince,500g ,202,234,15.7
+Rice,1000g ,80,92,15.0
+Biscuits,400g ,39,45,14.3
+Fruit Juice (Orange),1000ml ,63,72,14.1
+Mixed Frozen Vegetables,1000g ,78,89,13.7
+Fruit Squash,750ml ,44,49,12.2
+Breakfast Cereal,500g ,69,76,10.1
+Chicken Breast,600g ,322,350,8.7
+Vegetable Oil,1000ml ,164,178,8.5
+Baked Beans,400g ,29,31,7.0
+Tomato Ketchup,460g ,58,61,5.9
+Fish Fingers,250g ,75,77,2.8
+Onions,1000g ,65,67,2.6
+Ham,200g ,160,164,2.1
+Tomatoes,400g ,64,65,1.9
+Tea,125g ,86,88,1.8
+Yoghurt,500g ,54,55,1.5
+Bananas,5 pack ,73,74,0.7
+Instant Coffee,100g ,134,135,0.7
+Granulated Sugar,1000g ,66,67,0.5
+Milk,4 pints,126,127,0.3
+Apples,6 pack ,96,94,-1.2
+Sausages,454g ,87,84,-2.6
+Chips,900g ,119,116,-2.9
+Pizza,300g ,99,95,-4.1
+Cheese,255g ,95,88,-7.3
+Potatoes,2500g ,87,75,-13.8
