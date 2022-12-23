@@ -2,36 +2,108 @@
 <html lang="en">
 
 
+    
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+    <title>Akirjan's Project</title>
 
     <!--Main Stylesheet-->
     <link rel="stylesheet" href="project.css">
 
+
+    <!--The next three lines allow the Vega embed-->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
 </head>
+
+
 
 <body>
 
-    <h1>Project Name</h1>    
+    <div class="topnav">
+        <a href="https://github.com/Akirjan/Akirjan.github.io">Github</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="index.html">Home</a>
+  </div>
 
-    <p>My project for Data Science 2022 </p>
+<body>
 
-    <div class="links">
-        <a href="index.html" class="link" id="link1">Home Page</a>
-        <a href="Portfolio.html" class="link" id="link2">Portfolio</a>
+
+
+
+<body>
+
+   <!-- Creating the title-->
+   
+<div class="project"> 
+   
+   <p class=title>Explaining gun violence in the US</p>
+
+    <hr class="solid">
+    
+    <p><span class="bold">Aims: </span>
+
+
+    <!--First chart on gun deaths across the G7 countries from 1996 to 2019.-->      
+        <div class= "chart" id="Chart26"></div>
+
+
+
+
+    <!--Second chart on the inflation in the UK from 1988-2021.-->      
+        <div class="chart" id="Chart27"> </div>
         
-    </div>
+
+
+
+    <!--Third chart on the inflation in the UK from 1988-2021.-->      
+    <div class="chart" id="Chart28"> </div>
+        
+
+
+
+    
+    <!--Fifth chart on the inflation in the UK from 1988-2021.-->      
+    <div class="chart" id="Chart29"> </div>
+        
+
+
+
+     <!--Fourth chart on the inflation in the UK from 1988-2021.-->      
+     <div class="chart" id="Chart30"> </div>
+        
 
     
   
-
 </div>
 
 
 </body>
 
+
+
+
+<script>
+    //Define charts:
+    var myChart26 = "chart26_g7.json";
+    var myChart27 = "chart27_cost.json";
+    var myChart28 = "chart28_friendly.json";
+    var myChart29 = "chart29_ownership.json";
+    var myChart30 = "chart30_educationincome.json";
+
+
+    // Embed charts:
+    vegaEmbed('#Chart26', myChart26);
+    vegaEmbed('#Chart27', myChart27);
+    vegaEmbed('#Chart28', myChart28);
+    vegaEmbed('#Chart29', myChart29);
+    vegaEmbed('#Chart30', myChart30);
+    
+    
+</script>
+    
 
 </html>

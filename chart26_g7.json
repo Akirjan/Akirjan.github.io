@@ -1,0 +1,65 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/gundeaths.json"
+  },
+  "title": {
+    "text": "Deaths from gun for G7 countries",
+    "subtitle": "From 1996-2019. Source:GunPolicy.org",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "color": "black"
+  },
+  "width": 550,
+  "height": 350,
+ 
+
+
+ "mark": {"type": "line", "point": true},
+
+ "selection": {
+    "Type": {
+      "type": "single",
+      "fields": ["location"],
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Canada",
+          "France",
+          "Germany",
+          "Italy",
+          "Japan",
+          "United Kingdom",
+          "United States"
+          
+        ],
+        "name": "Pick Country"
+      }
+    }
+  },
+
+
+"transform": [{"filter": {"selection": "Type"}}],
+
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "nominal",
+      "axis": {"grid": false, "labelAngle": 45},
+      "title": ""
+    },
+    "y": {
+      "field": "value2",
+      "type": "quantitative",
+      "axis": {"grid": true},
+      "title": "Rate of all gun deaths per 100,000 people"
+    },
+    "color": {"field": "location", "type": "nominal", "title": "Country"},
+    "tooltip": [
+      {"field": "location", "type": "nominal", "title": "Country"},
+      {"field": "year", "type": "nominal", "title": "Year"},
+      {"field": "value2", "type": "nominal", "title": "Rate"}
+    ]
+  }
+}

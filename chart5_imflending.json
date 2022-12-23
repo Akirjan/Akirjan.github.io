@@ -6,7 +6,6 @@
         "subtitle":"Credit outstanding to all members 1984-2022, SRDs (billions), Source: IMF",
         "subtitleFontStyle":"italic",
         "subtitleFontSize":10,
-        "anchor": "start",
         "color": "black"},
     
     "data":{"url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/data_IMF_creditOutstanding.csv"},

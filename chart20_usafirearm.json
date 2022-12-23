@@ -1,0 +1,49 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  
+    "width": 500,
+    "height": 300,
+    "view": {"stroke": "transparent"},
+  
+     "title": {
+      "text": "Firearm mortality in the USA",
+      "fontSize": 12,
+      "subtitle":["Death rate per 100,000 of total State population. Source CDC, 2020"],
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10
+    },
+    
+    "data": {
+      "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/usamap.json",
+      "format": {"property": "features"}
+    },
+  
+    "transform": [{
+    "lookup": "properties.NAME",
+    "from": {
+      "key": "STATE",
+      "fields": ["RATE", "DEATHS"],
+      "data": {"url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/usamapcrime.csv"}}}],
+  
+    "projection": {"type": "albersUsa"},
+    "mark": "geoshape", 
+  
+    "encoding":{
+      "color":{
+        "field":"RATE",
+        "legend":{
+          "title": null,
+          "orient": "right",
+          "direction": "vertical"},
+          "type": "quantitative",
+          "scale":{
+            "scheme":"oranges",
+            "reverse": false}},
+
+      "tooltip":[
+        {"field":"properties.NAME", "title": "State"},
+        {"field":"RATE", "title": "Death Rate"}, 
+        {"field":"DEATHS", "title": "Number of deaths"}
+        
+      ]
+    }}

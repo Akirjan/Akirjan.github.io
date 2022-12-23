@@ -2,26 +2,34 @@
 
 /* FONTS: */
 
+/* Import a font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+
+
+
+
 h1{
-    font-family: 'Noto Sans Mono', sans-serif;
+    font-family: 'Open', sans-serif;
     text-align: center;
-    color:rgb(255, 255, 255);
-    background-color: #0049B7;
+    color:rgb(0, 0, 0);
+    background-color: #faeae6;
 }
 
 p{
-    font-family: 'Noto Sans Mono', sans-serif;
+    font-family: 'Open', sans-serif;
     text-align: center;
     font-size: larger;
-    color:rgb(255, 255, 255);
-    background-color: #0049B7;
+    color:rgb(0, 0, 0);
+    background-color: #faeae6;
 }
 
 
 /* AREAS OF THE PAGE */
 
 body{
-    background-color: #0049B7;
+    background-color: #faeae6;
 }
 
 
@@ -32,7 +40,7 @@ body{
 /* BUTTONS */
 
 .link{
-    background-color: rgba(132, 176, 230, 0.5);
+    background-color: #faeae6;
 
     padding:10px;
     
@@ -41,16 +49,18 @@ body{
     border-style: solid;
     border-radius: 10px;
 
-    font-family: 'Courier New', Courier, monospace;
-    font-weight:700;
-    color:white;
+    font-family: 'Open';
+    
+    color:rgb(0, 0, 0);
     text-decoration: none;
 }
+
 .links{
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 a{
     border: 5px;
     border-color: black;
@@ -60,10 +70,26 @@ a{
 
 .link:hover{
 
-    background-color: #0049B7;
+    background-color: #7a6a6a;
 
     border:2px;
     border-color:rgb(0, 0, 0);
     border-style: solid;
     
 }
+
+
+
+/*footer*/
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+ }   
+ 
+ 

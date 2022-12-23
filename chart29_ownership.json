@@ -1,0 +1,102 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/gunownershipvsgundeaths.json"
+    },
+  
+  
+    
+    "title": {
+      "text": "Death rate from guns vs gun ownership",
+      "subtitle":"Gun ownership and gun related death by state. Source: World population review 2022",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "color": "black"
+    },
+  
+  
+  "width":400,
+  "height":350,
+  
+  
+    "layer": [
+      {
+        "mark": {
+          "type": "circle",
+          "color":"blue",
+          "opacity":0.7,
+          "tooltip":true
+          
+        },
+        
+        "encoding": {
+          "x": {
+            "field": "gunOwnership",
+            "type": "quantitative",
+            "scale":{"domain":[0.10,0.70]}
+          },
+          "y": {
+            "field": "RATE",
+            "type": "quantitative"
+          }, 
+          "tooltip":[
+          {"field": "STATE", "type": "nominal", "title":"State"}, 
+          {"field": "RATE", "type": "nominal", "title":"Death Rate"}, 
+          {"field": "gunOwnership", "type": "nominal", "title":"Gun ownership"}
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "line",
+          "color": "firebrick"
+        },
+        "transform": [
+          {
+            "regression": "RATE",
+            "on": "gunOwnership",
+            "extent": [0.14,0.68]
+          }
+        ],
+  
+  
+        "encoding": {
+          "x": {
+            "field": "gunOwnership",
+            "type": "quantitative", 
+            "title":"Gun ownership rate in each state",
+            "axis": {"grid": false}
+  
+          },
+          "y": {
+            "field": "RATE",
+            "type": "quantitative",
+            "title":"Death rate per 100,000 of total state population",
+            "axis": {"grid": false}
+          }
+          
+        }
+      },
+      {
+        "transform": [
+          {
+            "regression": "RATE",
+            "on": "gunOwnership",
+            "params": true
+          },
+          {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+        ],
+        "mark": {
+          "type": "text",
+          "color": "firebrick",
+          "x": "width",
+          "align": "right",
+          "y": -5
+        },
+        "encoding": {
+          "text": {"type": "nominal", "field": "R2"}
+        }
+      }
+    ]
+  }
+  

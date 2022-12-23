@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/educlevelvsgundeath.json"
+  },
+  "title": {
+    "text": "Gun deaths and education level - US states",
+    "subtitle": "Firearm deaths per 100k population on education level. Source: World population review 2022",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "color": "black"
+  },
+  "width": 350,
+  "height": 350,
+  "mark": {"type": "point", "color": "green", "filled": true, "tooltip": true},
+  "encoding": {
+    "x": {
+      "field": "PercentBachelorsOrHigher",
+      "type": "quantitative",
+      "axis": {"grid": false},
+      "scale":{"domain":[20,50]},
+      "title": "Bachelors or higher by state (%)"
+    },
+    "y": {
+      "field": "RATE",
+      "type": "quantitative",
+      "axis": {"grid": false},
+      "title": "Death rate per 100,000 of total state population"
+    },
+    "size": {"field": "HouseholdIncome", "type": "quantitative", "title": "Average Income ($)", "scale": {"domain":[50000,120000], "range":[0,600]}},
+    "tooltip": [
+      {"field": "STATE", "type": "nominal", "title": "State"},
+      {"field": "RATE", "type": "nominal", "title": "Death Rate"},
+      {
+        "field": "PercentBachelorsOrHigher",
+        "type": "nominal",
+        "title": "Bachelors or higher (%)"
+      },
+      {
+        "field": "HouseholdIncome",
+        "type": "nominal",
+        "title": "Average income ($)"        
+      }
+    ]
+  }
+}

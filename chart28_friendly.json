@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/gunfriendlinessvsdeaths.json"
+  },
+  "title": {
+    "text": "Gun deaths and gun friendly index",
+    "subtitle": "",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "color": "black"
+  },
+  "width": 400,
+  "height": 300,
+  "layer": [
+    {
+      "mark": {
+        "type": "circle",
+        "color": "cornflowerblue",
+        "opacity":0.7,
+        "tooltip": true
+      },
+      "encoding": {
+        "x": {"field": "value", "type": "quantitative"},
+        "y": {"field": "RATE", "type": "quantitative"},
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "RATE", "type": "nominal", "title": "Death Rate"},
+          {"field": "note", "type": "nominal", "title": "Gun ownership"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "coral"},
+      "transform": [{"regression": "value", "on": "RATE", "extent": [1, 29]}],
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "title": "Gun friendly index",
+          "axis": {"grid": false}
+        },
+        "y": {
+          "field": "RATE",
+          "type": "quantitative",
+          "title": "Death rate per 100,000 of total state population",
+          "axis": {"grid": false}
+        }
+      }
+    },
+    {
+      "transform": [
+        {"regression": "value", "on": "RATE", "params": true},
+        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "coral",
+        "x": "width",
+        "align": "right",
+        "y": -5
+      },
+      "encoding": {"text": {"type": "nominal", "field": "R2"}}
+    }
+  ]
+}

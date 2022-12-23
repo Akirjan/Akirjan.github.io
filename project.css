@@ -1,78 +1,133 @@
 /* This is the design for my project page */
+
+
+/* Import a font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
+
+
+
 /* Background design */ 
-body{ 
-    background-color: #7575dd;
-    margin: auto;
-    overflow: scroll;
-    max-width: 450px;
-    text-align:center; 
-    vertical-align:middle;
- 
+
+body{
+  background-color:#faeae6;
+  background-size: cover;
+  margin: 0;
+  align-items: left;
+  justify-content: left;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
+  
+/* Set the apperance of the class, chart */
+.chart{
+  align-items: left;
+  background-color: white;
+  width: auto;
+  border-width: 5px;
+  border-radius: 10px;
+  border-style:solid;
+  border-color: #7a6a6a;
+  overflow: auto;
+  
+}
+
+.project{
+  margin: auto;
+  max-width: 600px;
+  background-color: #faeae6;
+
+}
+
+
 
 /* FONTS: */
 
-h1{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #7575dd;
-    color : rgb(255, 255, 255);
-}
 
-p{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: larger;
-    font-variant: small-caps;
-    color:rgb(255, 255, 255);
-    background-color: #7575dd;
+
+p.title {
+  text-align: left;
+  color: #000000;
+  font-family: 'Noto', sans-serif;
+  font-size: 2.5rem;
+  padding: 0px;
+  margin-bottom: 0px;
 }
 
 
+p.subtitle {
+  text-align: left;
+  color: #000000;
+  font-family: 'Noto', sans-serif;
+  font-size: 1.3rem;
+  padding: 0px;
+  margin-bottom: 0px;
 
-
-
-
-/* BUTTONS */
-
-
-.link{
-  background-color: rgba(117, 0, 167, 0.5);
-
-  padding:10px;
-  
-  border:2px;
-  border-color:grey;
-  border-style: solid;
-  border-radius: 10px;
-
-  font-family: 'Courier New', Courier, monospace;
-  font-weight:700;
-  color:white;
-  text-decoration: none;
 }
-.links{
-  display: flex;
+
+
+
+p {
   align-items: center;
-  justify-content: center;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-wrap: break-all;
+  font-family: 'Tinos', sans-serif;
+  font-size: 1.2rem;
 }
-a{
-  border: 5px;
-  border-color: black;
-  border-style: solid;
-  margin: auto;
+
+
+.leader{
+  font-weight: 550;
 }
 
-.link:hover{
+/* Solid border */
+hr.solid {
+  border-top: 5px solid #7a6a6a;
+  max-width: 750px;
+}
 
-  background-color: rgba(134, 0, 167, 0.8);
+.bold{
+  font-weight: 950;
+}
 
-  border:2px;
-  border-color:rgb(0, 0, 0);
-  border-style: solid;
+
+
+  /*NAVIGATION BAR*/
+.topnav {
+    position:relative;
+    background-color: #7a6a6a;
+    overflow: hidden;
+    justify-items: right;
+    border-bottom:1px solid white;
+    font-family: 'Roboto', sans-serif;
+    opacity: 100%;
+    color:white;
+  }
   
-}
 
-
-
-
+  .topnav a {
+    float: right;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
   
+  .topnav a:hover {
+    background-color: rgb(226, 226, 226);
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
 

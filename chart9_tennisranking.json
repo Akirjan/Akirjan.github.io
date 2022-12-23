@@ -7,7 +7,6 @@
         "subtitle":"Singles Ranking (Top 10), Source: ESPN",
         "subtitleFontStyle":"italic",
         "subtitleFontSize":10,
-        "anchor": "start",
         "color": "black"},
 
 
@@ -21,7 +20,7 @@
   },
   "encoding": {
     "y": {"field": "NAME", "type": "nominal", "sort":"quantitative", "title": ""},
-    "x": {"field": "POINTS", "type": "quantitative", "scale": {"domain": [0, 7000]}}
+    "x": {"field": "POINTS", "type": "quantitative", "scale": {"domain": [0, 7000]}, "axis":{"grid": false}}
       },
       
   "layer": [{

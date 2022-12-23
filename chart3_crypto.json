@@ -7,7 +7,6 @@
   "subtitle":"Daily BTC price in USD from 2016-2021. Source: Coinbase via FRED",
   "subtitleFontStyle":"italic",
   "subtitleFontSize":10,
-  "anchor": "start",
   "color": "black",
   "subtitleColor":"black"},
 

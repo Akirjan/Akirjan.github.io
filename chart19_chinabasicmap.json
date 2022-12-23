@@ -1,0 +1,35 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  
+
+  "width": 540,
+  "height": 300, 
+
+  "title": {
+    "text": "Map of China",
+    "subtitle": "Sectioned by provinces",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize":10,
+    
+    "color": "black"
+  },
+
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/chinamap.json",
+    "format": {"type": "topojson", "feature": "CHN_adm1"}
+  },
+  
+  "projection": {"type": "mercator"},
+  
+  "mark": {
+    "type": "geoshape", 
+    "stroke": "darkgrey", 
+    "fill":"lightgoldenrodyellow",
+    "strokeWidth": 0.5
+    },
+  
+  "encoding": {
+    "tooltip": {"field": "properties.NAME_1", "type": "nominal"}
+    }
+}
