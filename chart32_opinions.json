@@ -1,0 +1,76 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/data_opinions.json"
+  },
+  "mark": "bar",
+  "title": {
+    "text": "American population's opinion on key issue",
+    "subtitle": "Source:Pew Research Center",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "color": "black"
+  },
+
+
+
+  "height": 350,
+  "width": 300,
+  "transform": [
+    {
+      "calculate": "indexof(['A very big problem', 'A moderately big problem', 'A very big problem', 'A small problem', 'Not a problem at all', 'No answer'], datum.problems)",
+      "as": "order"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "aggregate": "sum",
+      "field": "Value",
+      "axis": {"title": "Severity (%)", "grid": false}
+    },
+    "y": {
+      "field": "Problems",
+      "axis": {"title": null},
+      "scale": {
+        "domain": [
+          "The affordability of health care",
+          "The federal budget deficit",
+          "Violent crime",
+          "Illegal immigration",
+          "Gun violence",
+          "The coronavirus outbreak",
+          "Racism",
+          "Economic inequality",
+          "Unemployment",
+          "Climate change",
+          "The quality of public K-12 schools",
+          "Domestic terrorism",
+          "Condition of infrastructure",
+          "International terrorism",
+          "Sexism"
+        ]
+      }
+    },
+    "color": {
+      "field": "Severity",
+      "type": "ordinal",
+      "scale": {
+        "domain": [
+          "A very big problem",
+          "A moderately big problem",
+          "A very big problem",
+          "A small problem",
+          "Not a problem at all",
+          "No answer"
+        ],
+        "range": ["#e7ba52", "#c7c7c7", "#aec7e8", "#1f77b4", "#9467bd"]
+      },
+      "legend": {"title": "Severity"}
+    },
+    "order": {"field": "order", "type": "ordinal"},
+    "tooltip": [
+      {"field": "Severity", "type": "nominal", "title": "Severity"},
+      {"field": "Value", "type": "quantitative", "title": "Percentage"}
+    ]
+  }
+}

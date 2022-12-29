@@ -1,11 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/gunfriendlinessvsdeaths.json"
+    "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/final.json"
   },
   "title": {
     "text": "Gun deaths and gun friendly index",
-    "subtitle": "",
+    "subtitle": "Source: CDC and AZ Defender, 2022",
     "subtitleFontStyle": "italic",
     "subtitleFontSize": 10,
     "color": "black"
@@ -16,26 +16,27 @@
     {
       "mark": {
         "type": "circle",
-        "color": "cornflowerblue",
-        "opacity":0.7,
+        "color": "royalblue",
+        "opacity": 0.7,
         "tooltip": true
       },
       "encoding": {
-        "x": {"field": "value", "type": "quantitative"},
+        "x": {"field": "Friendly Index", "type": "quantitative"},
         "y": {"field": "RATE", "type": "quantitative"},
         "tooltip": [
-          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "STATE", "type": "nominal", "title": "State"},
           {"field": "RATE", "type": "nominal", "title": "Death Rate"},
-          {"field": "note", "type": "nominal", "title": "Gun ownership"}
+          {"field": "Friendly Index", "type": "nominal", "title": "Gun friendly index"},
+          {"field": "Rank", "type": "nominal", "title": "State rank"}
         ]
       }
     },
     {
       "mark": {"type": "line", "color": "coral"},
-      "transform": [{"regression": "value", "on": "RATE", "extent": [1, 29]}],
+      "transform": [{"regression": "Friendly Index", "on": "RATE", "extent": [1, 29]}],
       "encoding": {
         "x": {
-          "field": "value",
+          "field": "Friendly Index",
           "type": "quantitative",
           "title": "Gun friendly index",
           "axis": {"grid": false}
@@ -43,14 +44,14 @@
         "y": {
           "field": "RATE",
           "type": "quantitative",
-          "title": "Death rate per 100,000 of total state population",
+          "title": "Death rate per 100,000 of state population",
           "axis": {"grid": false}
         }
       }
     },
     {
       "transform": [
-        {"regression": "value", "on": "RATE", "params": true},
+        {"regression": "Friendly Index", "on": "RATE", "params": true},
         {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
       ],
       "mark": {

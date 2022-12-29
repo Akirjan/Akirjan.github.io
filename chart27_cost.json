@@ -1,62 +1,82 @@
-{
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 500,
-    "height": 300,
-    "view": {"stroke": "transparent"},
-    "title": {
-      "text": "Economic cost of gun violence",
-      "fontSize": 12,
-      "subtitle": [
-        "On a per capita basis in each state. Source: Everystat, 2019"
-      ],
-      "subtitleFontStyle": "italic",
-      "subtitleFontSize": 10
-    },
-    
-    "data": {
-      "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/usamap.json",
-      "format": {"property": "features"}
-    },
-  
-    "projection": {"type": "albersUsa"},
-    "mark": "geoshape", 
-  
-    "params": [
-      {"name": "Select",
-        "value": "All Firearm Injuries",
-        "bind": {
-          "input": "select",
-          "options": [
-           "All Firearm Injuries", 
-           "Firearm Homicide and Assault (including Shooting by Police)", 
-           "Firearm Suicide and Attempts", 
-           "Firearm Injuries with No Known Intent"
-           ]}}],
-  
-    "transform": [
-              
-        {"lookup": "properties.NAME",
-            "from": {
-                "data": {"url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/cost.json"},
-                "key": "state",
-                "fields": [       
-                    "All Firearm Injuries", 
-                    "Firearm Homicide and Assault (including Shooting by Police)", 
-                    "Firearm Suicide and Attempts",
-                     "Firearm Injuries with No Known Intent"]}},
+{"$schema":"https://vega.github.io/schema/vega/v5.json",
 
-          {"calculate": "datum[Select]","as": "varSelected"}],
- 
-    "encoding": {
-      "color": {
-        "field": "varSelected",
-        "legend": {"title": null, "orient": "right", "direction": "vertical"},
-        "type": "quantitative",
-        "scale": {"scheme": "oranges", "reverse": false}
-      },
-      "tooltip": [
-          {"field":"properties.NAME", "title": "State"},
-         {"field":"varSelected", "title": "Economic cost per capita ($)", "format": ",d"}]
-      
-    }
-  }
+"description":"todo",
+
+"width":400,
+
+"height":250,"padding":0.6,
+
+
+  "title": {
+    "text": "Economic cost of gun violence",
+    "fontSize": 12,
+    "subtitle": [
+      "Average firearm death and injury cost per capita each year. Source: Everystat, 2019"
+    ],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10
+  },
+
+"data":
+[{"name":"states",
+"url":"https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/dotmap.json",
+
+"format":{"type":"topojson","feature":"states"}},
+
+{"name":"data", 
+  "url":"https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/cost2.json", 
+  "format":{"type":"json","parse":"auto","delimiter":","},   
+  "transform":
+    [{"type":"lookup",
+      "from":"states",
+      "key":"id",
+      "fields":["id"],
+      "as":["geo"]},
+    {"type":"filter","expr":"datum.geo"},
+    {"type":"formula","as":"centroid","expr":"geoCentroid('projection', datum.geo)"}]}],
+
+"projections":
+[{"name":"projection",
+  "type":"albersUsa", 
+  "scale":500,  
+  "translate":[{"signal":"width / 2"},  
+  {"signal":"height / 2"}]}], 
+  "scales":[{"name":"color",  
+  "type":"linear",  
+  "domain":{"data":"data",  
+  "field":"All Firearm Injuries"},  
+  "range":["#080A10","#999999","#E94E25"]}],
+  
+
+
+"marks":
+  [{"name":"circles", 
+  "type":"symbol",  
+  "from":{"data":"data"}, 
+  "encode":{"enter":{"size":{"value":800},  
+  "fill":{"scale":"color",
+  "field":"All Firearm Injuries"},
+  "stroke":{"value":"white"},
+  "shape": {"value":"circle"},
+  "strokeWidth":{"value":1.5},
+  "x":{"field":"centroid[0]"},
+  "y":{"field":"centroid[1]"},
+  "tooltip":{"signal":"{'title': 'Average cost per capita ($)', 'State': datum.State ,'All Firearm Injuries': datum['All Firearm Injuries'], 'Firearm Homicide and Assault (including Police Shooting)': datum['Firearm Homicide and Assault (including Police Shooting)'], 'Firearm Suicide and Attempts': datum['Firearm Suicide and Attempts'], 'Firearm Injuries with No Known Intent': datum['Firearm Injuries with No Known Intent']}"}}},
+
+  "transform":[{"type":"force",
+  "static":true,
+  "forces":[{"force":"collide","radius":{"expr":"sqrt(datum.size/2)"}},
+  {"force":"x","x":"datum.centroid[0]"},
+  {"force":"y","y":"datum.centroid[1]"}]}]},
+  {"type":"text","interactive":false,
+  "from":{"data":"circles"},
+  "encode":{"update":{"align":{"value":"center"},
+  "baseline":{"value":"middle"},
+  "fill":{"value":"white"},
+  "fontSize":{"value":9},
+  "fontWeight":{"value":"bold"},
+  "text":{"signal":"upper(substring(datum.datum.State, 0, 2))"},
+  "x":{"field":"x"},"y":{"field":"y"}}}}]}
+
+
+  

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 300,
+  "view": {"stroke": "transparent"},
+  "title": {
+    "text": "Gun production and labour market",
+    "fontSize": 12,
+    "subtitle": [
+      "Jobs, wages and economic output. Source: National Shooting Sports Foundation, 2021"
+    ],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/usamap2.json",
+    "format": {"property": "features"}
+  },
+  "projection": {"type": "albersUsa"},
+  "mark": "geoshape",
+  "params": [
+    {
+      "name": "Select",
+      "value": "Jobs",
+      "bind": {
+        "input": "select",
+        "options": ["Economic output ($mn)", "Wages ($mn)",  "Federal Business Tax ($mn)", "Number of jobs"]
+      }
+    }
+  ],
+  "transform": [
+    {
+      "lookup": "properties.NAME",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/jobs.json"
+        },
+        "key": "STATE",
+        "fields": ["Jobs", "Wages", "Output", "Business Tax"]
+      }
+    },
+    {"calculate": "datum[Select]", "as": "varSelected"}, 
+    {"calculate": "datum.Jobs", "as": "Number of jobs"},
+    {"calculate": "datum.Wages/1000000", "as": "Wages ($mn)"},
+    {"calculate": "datum.Output/1000000", "as": "Economic output ($mn)"}, 
+    {"calculate": "datum['Business Tax']/1000000", "as": "Federal Business Tax ($mn)"}
+
+  ],
+  "encoding": {
+    "color": {
+      "field": "varSelected",
+      "legend": { "title": "",
+        "legendX": 0,
+        "legendY": 0,
+        "direction": "vertical"},
+      "type": "quantitative",
+      "scale": {"scheme": "goldorange", "reverse": false}
+    },
+    "tooltip": [
+      {"field": "properties.NAME", "title": "State"},
+      {
+        "field": "varSelected",
+        "title": "Value",
+        "type": "quantitative",
+        "format": ",.0f"
+      }   
+    ]
+  }
+}

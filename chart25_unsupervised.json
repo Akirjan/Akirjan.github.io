@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/countries_cluster.csv"
+  },
+  "width": 500,
+  "height": 300,
+  "title": {
+    "text": "Countries by bearing",
+    "fontSize": 15,
+    "subtitle": "The countries are clustered to form 7 groups. Source: Dataset Publishing Language",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "color": "black"
+  },
+  "mark": {"type": "point", "filled": true, "size": 100, "opacity": 0.8},
+  "encoding": {
+    "x": {
+      "field": "longitude",
+      "title": "Longitude",
+      "type": "quantitative",
+      "scale": {"zero": false}, 
+      "axis":{"grid": false}
+    },
+    "y": {
+      "field": "latitude",
+      "title": "Latitude",
+      "type": "quantitative",
+      "scale": {"zero": false}, 
+      "axis":{"grid": false}
+      
+    },
+    "color": {
+      "field": "cluster_countries",
+      "title": "Groups",
+      "type": "nominal", 
+      "legend": {"labelExpr": 
+      "{'0': 'Oceania', '1': 'Europe and East Africa', '2': 'Southern Africa and Antartica', '3': 'Asia','4': 'North and South America','5': 'Oceania small islands','6': 'North Africa and West Asia'}[datum.label]"}
+    }
+  }
+}

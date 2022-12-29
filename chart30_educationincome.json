@@ -5,23 +5,30 @@
   },
   "title": {
     "text": "Gun deaths and education level - US states",
-    "subtitle": "Firearm deaths per 100k population on education level. Source: World population review 2022",
+    "subtitle": "Source: CDC and Wikipedia, 2021",
     "subtitleFontStyle": "italic",
     "subtitleFontSize": 10,
     "color": "black"
   },
   "width": 400,
   "height": 350,
-  "mark": {"type": "point", "color": "green", "filled": true, "tooltip": true},
+  "mark": {
+    "type": "point",
+    "color": "#008000",
+    "filled": true,
+    "tooltip": true
+  },
 
-
-
+"selection": {
+    "paintbrush": {"type": "multi", "on": "mouseover", "nearest": true},
+    "grid": {"type": "interval", "bind": "scales"}
+  }, 
   "encoding": {
     "x": {
       "field": "With a Bachelors Degree or higher Pct",
       "type": "quantitative",
       "axis": {"grid": false},
-      "scale":{"domain":[20,50]},
+      "scale": {"domain": [22, 48]},
       "title": "Bachelors Degree or higher (%)"
     },
     "y": {
@@ -34,11 +41,8 @@
       "field": "Average Earnings",
       "type": "quantitative",
       "title": "Average Income ($)",
-      "scale": {"domain":[50000,130000], "range": [0, 700]}
+      "scale": {"domain": [55000, 100000], "range": [0, 700]}
     },
-
-
-
     "tooltip": [
       {"field": "State", "type": "nominal", "title": "State"},
       {"field": "RATE", "type": "nominal", "title": "Death Rate"},
@@ -50,7 +54,8 @@
       {
         "field": "Average Earnings",
         "type": "nominal",
-        "title": "Average Earnings ($)"
+        "title": "Average Earnings ($)",
+        "format": ",.0f"
       }
     ]
   }
