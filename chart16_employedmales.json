@@ -1,26 +1,59 @@
-
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {
-      "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/data_ONS-mgsv.json",
-      "format": {"type": "json", "property": "years"}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/data_ONS-mgsv.json",
+    "format": {"type": "json", "property": "years"}
+  },
+  "title": {
+    "text": "Male employment rate in the UK",
+    "subtitle": "Aged 16-64 from 1971-2022: Source: ONS",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "color": "black"
+  },
+  "width": 200,
+  "height": 200,
+  "mark": {"type": "line", "color": "rgb(0,47,167"},
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "axis": {"grid": false},
+      "title": ""
     },
-         "title": {
-              "text": "Male employment rate in the UK",
-              "subtitle": "Aged 16-64 from 1971-2022: Source: ONS",
-              "subtitleFontStyle": "italic",
-              "subtitleFontSize":10,
-              
-              "color": "black"
-            },
-            "width": 200,
-            "height": 200,
-    "mark": {
-      "type": "line",
-      "color": "rgb(0,47,167"   
-    },
-    "encoding": {
-        "x": {"field": "date", "type": "temporal", "axis": {"grid": false}, "title": ""},
-        "y": {"field": "value", "type": "quantitative", "axis": {"grid": false}, "title": "Employment rate (%)"}
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "axis": {"grid": false},
+      "title": "Employment rate (%)"
     }
-  }
+  },
+      "transform": [
+    {"filter": "datum.year>minYear"},
+    {"filter": "datum.year<maxYear"}
+  ],
+  "params": [
+    {
+      "name": "minYear",
+      "value": 1971,
+      "bind": {
+        "input": "range",
+        "min": 1971,
+        "max": 2022,
+        "step": 1,
+        "name": "Start year:"
+      }
+    },
+    {
+      "name": "maxYear",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 1971,
+        "max": 2022,
+        "step": 1,
+        "name": "End year:"
+      }
+    }
+  ]
+}

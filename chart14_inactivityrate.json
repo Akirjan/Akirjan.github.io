@@ -1,25 +1,60 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {
-      "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/data_ONS-lf2w.json",
-      "format": {"type": "json", "property": "years"}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/data_ONS-lf2w.json",
+    "format": {"type": "json", "property": "years"}
+  },
+  "title": {
+    "text": "Inactivity rate in the UK",
+    "subtitle": "Aged 50-64 from 1992-2022, Source: ONS",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "color": "black"
+  },
+  "width": 200,
+  "height": 200,
+  "mark": {"type": "line", "color": "rgb(0,47,167"},
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "axis": {"grid": false},
+      "title": ""
     },
-         "title": {
-              "text": "Inactivity rate in the UK",
-              "subtitle": "Aged 50-64 from 1992-2022, Source: ONS",
-              "subtitleFontStyle": "italic",
-              "subtitleFontSize":10,
-             
-              "color": "black"
-            },
-            "width": 200,
-            "height": 200,
-    "mark": {
-      "type": "line",
-      "color": "rgb(0,47,167"   
-    },
-    "encoding": {
-        "x": {"field": "date", "type": "temporal", "axis": {"grid": false}, "title": ""},
-        "y": {"field": "value", "type": "quantitative", "axis": {"grid": false}, "title": "Inactivity rate (%)"}
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "axis": {"grid": false},
+      "title": "Inactivity rate (%)"
     }
-  }
+  },
+  
+  "transform": [
+    {"filter": "datum.year>minYear"},
+    {"filter": "datum.year<maxYear"}
+  ],
+  "params": [
+    {
+      "name": "minYear",
+      "value": 1992,
+      "bind": {
+        "input": "range",
+        "min": 1992,
+        "max": 2022,
+        "step": 1,
+        "name": "Start year:"
+      }
+    },
+    {
+      "name": "maxYear",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 1992,
+        "max": 2022,
+        "step": 1,
+        "name": "End year:"
+      }
+    }
+  ]
+}

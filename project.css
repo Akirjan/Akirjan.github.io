@@ -51,6 +51,13 @@ p.title {
 }
 
 
+h3{
+  color: rgb(65, 48, 34);
+  font-family: 'Noto', sans-serif;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
 
 p {
   align-items: center;

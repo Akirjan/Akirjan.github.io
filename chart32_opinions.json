@@ -6,7 +6,7 @@
   "mark": "bar",
   "title": {
     "text": "American population's opinion on key issue",
-    "subtitle": "Source:Pew Research Center",
+    "subtitle": "Survey of US adults conducted April 5-11, 2021. Source:Pew Research Center",
     "subtitleFontStyle": "italic",
     "subtitleFontSize": 10,
     "color": "black"

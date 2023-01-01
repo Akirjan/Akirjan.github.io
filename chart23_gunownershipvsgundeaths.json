@@ -1,87 +1,68 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/gunownershipvsgundeaths.json"
+    "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/ownership.json"
   },
-
-
-  
   "title": {
     "text": "Death rate from guns vs gun ownership",
-    "subtitle":"Gun ownership and gun related death by state. Source: World population review 2022",
-    "subtitleFontStyle":"italic",
-    "subtitleFontSize":10,
+    "subtitle": "Source: CDC and Wisevoter, 2020",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
     "color": "black"
   },
-
-
-"width":400,
-"height":350,
-
-
+  "width": 400,
+  "height": 350,
   "layer": [
     {
       "mark": {
         "type": "point",
-        "color":"blue",
+        "color": "blue",
         "filled": true,
-        "tooltip":true
-        
+        "tooltip": true
       },
-      
       "encoding": {
         "x": {
-          "field": "gunOwnership",
+          "field": "Household Firearm Ownership Rate",
           "type": "quantitative", 
-          "scale":{"domain":[0.10,0.70]}
+          "scale":{"domain":[5,70]}
         },
-        "y": {
-          "field": "RATE",
-          "type": "quantitative"
-        }, 
-        "tooltip":[
-        {"field": "STATE", "type": "nominal", "title":"State"}, 
-        {"field": "RATE", "type": "nominal", "title":"Death Rate"}, 
-        {"field": "gunOwnership", "type": "nominal", "title":"Gun ownership"}
+        "y": {"field": "RATE", "type": "quantitative"},
+        "tooltip": [
+          {"field": "STATE", "type": "nominal", "title": "State"},
+          {"field": "RATE", "type": "nominal", "title": "Death Rate"},
+          {"field": "Household Firearm Ownership Rate", "type": "nominal", "title": "Gun ownership"}
         ]
       }
     },
     {
-      "mark": {
-        "type": "line",
-        "color": "firebrick"
-      },
+      "mark": {"type": "line", "color": "firebrick"},
       "transform": [
         {
           "regression": "RATE",
-          "on": "gunOwnership",
-          "extent": [0.14,0.68]
+          "on": "Household Firearm Ownership Rate",
+          "extent": [7.5, 66.5]
         }
       ],
-
-
       "encoding": {
         "x": {
-          "field": "gunOwnership",
-          "type": "quantitative", 
-          "title":"Gun ownership rate in each state",
+          "field": "Household Firearm Ownership Rate",
+          "type": "quantitative",
+          "title": "Household Firearm Ownership Rate (%)",
           "axis": {"grid": false}
-
         },
         "y": {
           "field": "RATE",
           "type": "quantitative",
-          "title":"Death rate per 100,000 of total state population",
+          "title": "Death rate per 100,000 of state population",
           "axis": {"grid": false}
         }
-        
       }
     },
     {
       "transform": [
         {
           "regression": "RATE",
-          "on": "gunOwnership",
+          "on": "Household Firearm Ownership Rate",
           "params": true
         },
         {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
@@ -93,9 +74,7 @@
         "align": "right",
         "y": -5
       },
-      "encoding": {
-        "text": {"type": "nominal", "field": "R2"}
-      }
+      "encoding": {"text": {"type": "nominal", "field": "R2"}}
     }
   ]
 }

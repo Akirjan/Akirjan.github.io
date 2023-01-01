@@ -69,7 +69,7 @@
       ],
       "mark": {
         "type": "text",
-        "color": "firebrick",
+        "color": "#DB7093",
         "x": "width",
         "align": "right",
         "y": -5
