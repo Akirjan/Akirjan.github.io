@@ -96,16 +96,15 @@ h1, h3, p{
     
   }
 
-
- .grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-row-gap: 10px;
-    justify-content: center;
-    
+/*specifying the grid*/
+.grid-container {
+  display: grid;
+  grid-template-columns:  450px 450px 450px ;
+  grid-row-gap: 10px;
+  justify-content: center;
   
-     }
 
+   }
 
 
   #Chart10, #Chart11, #Chart12, #Chart13, #Chart14, #Chart15, #Chart16, #Chart17, #Chart18 {
@@ -186,6 +185,5 @@ hr.solid {
 #Chart25{
   margin-left: -80px;
   
-
 }
 

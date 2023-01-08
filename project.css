@@ -42,7 +42,7 @@ body{
 
 
 p.title {
-  text-align: left;
+  text-align: center;
   color:rgb(65, 48, 34);
   font-family: 'Noto', sans-serif;
   font-size: 2rem;
@@ -144,3 +144,4 @@ hr.solid {
 #Chart32{
   margin-left: -30px;
 }
+

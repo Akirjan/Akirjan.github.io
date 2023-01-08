@@ -11,7 +11,7 @@
     "text": "Economic cost of gun violence",
     "fontSize": 12,
     "subtitle": [
-      "Average firearm death and injury cost per capita each year. Source: Everystat, 2019"
+      "Average firearm death and injury cost per capita each year. Source: Everystat, 2019", "Colours: Black to red (lowest to highest cost $)"
     ],
     "subtitleFontStyle": "italic",
     "subtitleFontSize": 10

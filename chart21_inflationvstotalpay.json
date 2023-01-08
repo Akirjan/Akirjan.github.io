@@ -1,75 +1,66 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Inflation and total pay (real)",
-  
-    "title": {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Inflation and total pay (real)",
+  "title": {
     "text": "Nominal vs real wage growth rates",
-    "subtitle":"From January 2001 to July 2022 , Source: ONS",
-    "subtitleFontStyle":"italic",
-    "subtitleFontSize":10,
-    "color": "black"},
-  
-  
-    "data": {"url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/nominalvsrealwages.csv"},
-    
-    "width": 400, 
-    "height":300,
-  
-    "layer": [
-      {
-    "mark": {
-      "type": "line",
-   
-      "color": "blue"},
-     
-        "encoding": {
-          "x": {
-            "field": "Period",
-            "type": "temporal",
-            "title":"",
-            "axis":{"grid": false}
-          },
-          "y": {
-            "field": "Regular pay (nominal)",
-            "type": "quantitative",
-            "title":"%",
-            "axis":{"grid": false}
-          }, 
-    "tooltip": [
-          
+    "subtitle": "From January 2001 to July 2022 , Source: ONS",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/nominalvsrealwages.csv"
+  },
+  "width": 400,
+  "height": 300,
+  "layer": [
+    {
+      "mark": {"type": "line"},
+      "encoding": {
+        "x": {
+          "field": "Period",
+          "type": "temporal",
+          "title": "",
+          "axis": {"grid": false}
+        },
+        "y": {
+          "field": "Regular pay (nominal)",
+          "type": "quantitative",
+          "title": "%",
+          "axis": {"grid": false}
+        },
+
+         "color": {"datum": "Regular pay (Nominal)"},
+        "tooltip": [
           {"field": "Regular pay (nominal)", "type": "nominal"},
           {"field": "Regular pay (real)", "type": "nominal"}
-          ]
+        ]
       }
-        
-      },
-      {
-       "mark": {
-      "type": "line",
-      "color": "red"},
-        "encoding": {
-          "x": {
-             "field": "Period",
-            "type": "temporal",
-            "title":"",
-            "axis":{"grid": false}
-          },
-          "y": {
-            "field": "Regular pay (real)",
-            "type": "quantitative",
-            "axis":{"grid": false}
-          },
-          "tooltip": [
-        
+    },
+    {
+      "mark": {"type": "line"},
+      "encoding": {
+        "x": {
+          "field": "Period",
+          "type": "temporal",
+          "title": "",
+          "axis": {"grid": false}
+        },
+        "y": {
+          "field": "Regular pay (real)",
+          "type": "quantitative",
+          "axis": {"grid": false}
+        },
+        "color": {"datum": "Regular pay (Real)",
+        "scale": {"scheme": "darkmulti"},
+         "type": "nominal",
+      "legend": {"orient": "top-left", "columns": 1}},
+
+        "tooltip": [
           {"field": "Regular pay (nominal)", "type": "nominal"},
           {"field": "Regular pay (real)", "type": "nominal"}
-          ]
-        }
+        ]
       }
-  
-    
-    
-    ]
-  }
-  
-  
+    }
+  ]
+}
