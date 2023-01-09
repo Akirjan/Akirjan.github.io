@@ -50,7 +50,7 @@
         The homicide rate in the US is more than seven times greater than in other 
         industrialised economies. In 2020, nearly 
         <a href="https://econofact.org/gun-violence-in-the-u-s">80 percent</a> of US homicides involved firearms. 
-        Therefore, this project aims to answer why the US is one of the worst high-income countries in 
+        This project aims to answer why the US is one of the worst high-income countries in 
         preventing firearm mortality, whilst highlighting the importance of the arms industry within the US labour market. 
         
        </p>
@@ -72,9 +72,9 @@
 
 
         <p>
-            This chart shows that even during the Coronavirus pandemic, 
-            in April 2021, Americans regarded gun violence as more of a “very big problem” 
-            compared to the viral outbreak. This research will now demonstrate my investigation 
+            This visualisation required concatenating data from multiple scraped tables, 
+            replacing missing values and changing the data to long form using the ‘pd.melt’ command. 
+            This research will now demonstrate my investigation 
             into the causes behind the concerns of gun violence. 
         </p>
 
@@ -84,21 +84,22 @@
         <p>
             In order to examine and compare the US’s high rates of gun violence,
              I used <a href="https://colab.research.google.com/drive/1BgEF47mxhQfSiMqkVy13Tl_ZM11I8SyI?usp=sharing">Python</a> 
-             to batch download <a href="https://www.gunpolicy.org/api">API</a> links on the firearm related death rates
-              for the world’s largest advanced <a href="https://en.wikipedia.org/wiki/G7">economies</a> – the G7 countries. 
+             to batch download API links using a loop on the firearm related death rates for the world’s largest advanced 
+             <a href="https://en.wikipedia.org/wiki/G7">economies</a>. 
            
            
         </p>      
         
         <div class= "chart" id="Chart26"></div>  
-
+        
         <p>
             In contrast to the other G7 countries, the US has had more than double the death rate from firearms across the years.
-             The reason for the missing data is that the API source can only display data for the most recent year for which the
-              data has been published. Some countries often lag several years behind high-capacity countries such as the US.
-               Others (perhaps France) are waiting for the API source to undergo their ongoing country-by-country data sweeps.
-                Furthermore, data from low-capacity countries are only published erratically. Since this dataset required cleaning,
-                 this visualisation does not benefit from a quick and reliable automatic update when the API source updates. 
+             The reason for the missing data is that the <a href="https://www.gunpolicy.org/api">API source</a> 
+             can only display data for the most recent year for which the data has been published.
+              Some countries often lag several years behind high-capacity countries such as the US.
+               Others (perhaps France) are waiting for the API source to undergo their ongoing country-by-country data sweeps. 
+               Since this dataset required cleaning, this visualisation does not benefit from a quick and reliable automatic 
+               update when this free sign-up accessible API source updates. 
         </p>
     
         <p> 
@@ -108,7 +109,7 @@
               error code denied my request of wanting to scrape the website.
                Therefore, I inspected the network activity to find an
                <a href="https://everystat.org/wp-content/uploads/2022/07/A.6.Landscape_cost_by_state-06-27-22.txt">external data source</a>,
-                and I utilised the “Get Data” function in Excel to scrape this data and cleaned it in 
+                and I utilised the 'Get Data' function in Excel to scrape this data and cleaned it in 
                 <a href="https://colab.research.google.com/drive/1yBAopZxdH82U64LdKsxnTLI81IIbdX8R?usp=sharing">Python</a>.
 
         </p>
@@ -127,7 +128,7 @@
         </p>
 
 
-        <h3> Potential correlations</h3>
+        <h3>Potential correlations</h3>
 
         <p>
             To leverage the restrictive and permissive gun laws across states,
@@ -144,14 +145,12 @@
         <div class="chart" id="Chart28"> </div>
         
         <p>
-            The regression in <a href="https://colab.research.google.com/drive/19NbWYfy1-dz4BxKsTRQMDoGoBMOHb9hL?usp=sharing">Python</a> 
-            illustrates a one unit increase in the gun-friendly index results in a 0.15 
-            rise in death rate per 100,000. As expected, a state with lenient gun laws tend to 
-            have higher firearm mortality. The authors based the gun-friendly index on various 
-            factors ranging from how lenient the background checks are to the state-level gun culture. 
-            An R^2 of 0.50 suggests that 50 percent of the variability in the death rate is explained by the gun-friendly index. 
-            
-            
+            The regression in <a href="https://colab.research.google.com/drive/19NbWYfy1-dz4BxKsTRQMDoGoBMOHb9hL?usp=sharing">Python</a>
+            illustrates a one unit increase in the gun-friendly index results in the death rate per 100,000 rising by 0.15. 
+            A state with lenient gun laws tends to have higher firearm mortality. 
+            The gun-friendly index was based on various factors ranging from how lenient 
+            the background checks are to the state-level gun culture. An R^2 of 0.50 suggests 
+            that 50 percent of the variability in the death rate is explained by the gun-friendly index. 
         </p>
 
         <p>
@@ -169,17 +168,19 @@
         
         <p> 
             This regression demonstrates that a one percent increase in firearm ownership increases
-             the death rate per 100,000 by 0.31 and has a higher R^2 of 0.55. 
+             the death rate per 100,000 by 0.31, with an R^2 of 0.55. 
 
         </p>
 
         <p>
-            For the final correlation, I wanted to establish whether a highly 
-            educated population affects firearm mortality. I regressed the death rate on the percentage of people with a 
+            For the final correlation, I wanted to establish whether both average income and a highly 
+            educated population influence firearm mortality. Hence, I utilised the web-scraping tool ‘Beautiful Soup’ to 
+            <a href="https://colab.research.google.com/drive/1wzyJhql38Vjlma8KhZ8YMTiaTEChtNW1?usp=sharing">scrape</a> 
+            the specific tables of interest and looped through all the table content for the percentage of people with a 
             <a href="https://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_educational_attainment">bachelor’s</a> 
-            degree or higher and also included data on the 
-            <a href="https://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_median_wage_and_mean_wage">average income</a> per state.
-            
+            degree or higher and the 
+            <a href="https://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_median_wage_and_mean_wage">average earnings</a> per state.
+
         </p>    
 
 
@@ -187,9 +188,8 @@
      <div class="chart" id="Chart30"> </div>
         
         <p>
-            The <a href="https://colab.research.google.com/drive/1wzyJhql38Vjlma8KhZ8YMTiaTEChtNW1?usp=sharing">Python</a> 
-            regression analysis indicates a negative relationship between education and death rate,
-             and between income and death rate. However, as expected, there is a positive correlation 
+            The Python regression analysis indicates a negative relationship between education and death rate,
+             and between income and death rate. However, there is a positive correlation 
              between education and income. 
             
         </p>
@@ -200,7 +200,7 @@
             <p>
                 A solution to firearm mortality may be to prohibit gun sales. However, the arms industry was important to the US GDP of 
                 <a href="https://en.wikipedia.org/wiki/Economy_of_the_United_States">$22,996.1 billion</a>, 
-                contributing a total of $70.52 billion in 2021. To access this data, I scraped a PDF report by 
+                contributing a total of $70.52 billion (0.31 percent) in 2021. To access this data, I scraped a PDF report by 
                 <a href="https://www.nssf.org/wp-content/uploads/2022/03/2022-Firearm-Ammunition-Industry-Economic-Impact.pdf">NSSF</a> using 
                 <a href="https://colab.research.google.com/drive/1VQ7WW980YwJ4o16Uj6c_zVVQj4sG26wI?usp=sharing">Python</a>. 
             
@@ -211,10 +211,10 @@
       <div class="chart" id="Chart31"> </div>
 
         <p>
-            In 2021, the US had a total of 6,300,000 people unemployed. 
-            Therefore, the 375,819 jobs provided in this sector with an average wage of $56,900
-             is crucial for the livelihood of these Americans. Finally, a substantial contribution
-              of approximately $4.6 billion is funded through federal taxes for government expenditure. 
+            This chart merged the scraped data with a topoJSON file of the US map in Vega.
+             In 2021, the US had a total of 6,300,000 people unemployed. 
+             Therefore, the 375,819 jobs provided in this sector with an average wage of 
+             $56,900 is crucial for the livelihood of these Americans. 
         </p>
 
   

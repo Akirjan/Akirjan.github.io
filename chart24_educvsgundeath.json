@@ -1,25 +1,35 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/educlevelvsgundeath.json"
+    "url": "https://raw.githubusercontent.com/Akirjan/Akirjan.github.io/main/chart6_educ%26inc.json"
   },
   "title": {
     "text": "Gun deaths and education level - US states",
-    "subtitle": "Firearm deaths per 100k population on education level. Source: World population review 2022",
+    "subtitle": "Source: CDC and Wikipedia, 2021",
     "subtitleFontStyle": "italic",
     "subtitleFontSize": 10,
     "color": "black"
   },
-  "width": 350,
+  "width": 400,
   "height": 350,
-  "mark": {"type": "point", "color": "green", "filled": true, "tooltip": true},
+  "mark": {
+    "type": "point",
+    "color": "#008000",
+    "filled": true,
+    "tooltip": true
+  },
+
+"selection": {
+    "paintbrush": {"type": "multi", "on": "mouseover", "nearest": true},
+    "grid": {"type": "interval", "bind": "scales"}
+  }, 
   "encoding": {
     "x": {
-      "field": "PercentBachelorsOrHigher",
+      "field": "With a Bachelors Degree or higher Pct",
       "type": "quantitative",
       "axis": {"grid": false},
-      "scale":{"domain":[20,50]},
-      "title": "Bachelors or higher by state (%)"
+      "scale": {"domain": [22, 48]},
+      "title": "Bachelors Degree or higher (%)"
     },
     "y": {
       "field": "RATE",
@@ -27,19 +37,25 @@
       "axis": {"grid": false},
       "title": "Death rate per 100,000 of total state population"
     },
-    "size": {"field": "HouseholdIncome", "type": "quantitative", "title": "Average Income ($)", "scale": {"domain":[50000,120000], "range":[0,600]}},
+    "size": {
+      "field": "Average Earnings",
+      "type": "quantitative",
+      "title": "Average Income ($)",
+      "scale": {"domain": [55000, 100000], "range": [0, 700]}
+    },
     "tooltip": [
-      {"field": "STATE", "type": "nominal", "title": "State"},
+      {"field": "State", "type": "nominal", "title": "State"},
       {"field": "RATE", "type": "nominal", "title": "Death Rate"},
       {
-        "field": "PercentBachelorsOrHigher",
+        "field": "With a Bachelors Degree or higher Pct",
         "type": "nominal",
         "title": "Bachelors or higher (%)"
       },
       {
-        "field": "HouseholdIncome",
+        "field": "Average Earnings",
         "type": "nominal",
-        "title": "Average income ($)"        
+        "title": "Average Earnings ($)",
+        "format": ",.0f"
       }
     ]
   }
